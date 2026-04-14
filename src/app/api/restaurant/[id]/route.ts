@@ -36,10 +36,13 @@ export async function PUT(
       description: body.description ?? restaurant.description,
       address: body.address ?? restaurant.address,
       phone: body.phone ?? restaurant.phone,
-      bg_image_url: body.bg_image_url ?? restaurant.bg_image_url,
+      bg_image_url: "bg_image_url" in body ? body.bg_image_url : restaurant.bg_image_url,
       theme_color: body.theme_color ?? restaurant.theme_color,
       font_family: body.font_family ?? restaurant.font_family,
-      logo_url: body.logo_url ?? restaurant.logo_url,
+      logo_url: "logo_url" in body ? body.logo_url : restaurant.logo_url,
+      zomato_url: body.zomato_url ?? restaurant.zomato_url,
+      swiggy_url: body.swiggy_url ?? restaurant.swiggy_url,
+      instagram_url: body.instagram_url ?? restaurant.instagram_url,
     });
 
     return success(updated);

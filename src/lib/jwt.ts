@@ -2,7 +2,8 @@
 
 import type { JWTPayload } from './types';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'dev-jwt-secret-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET) throw new Error("FATAL: JWT_SECRET environment variable is not set. Set it in .env.local");
 
 function base64UrlEncode(input: Uint8Array | ArrayBuffer): string {
   const bytes = input instanceof Uint8Array ? input : new Uint8Array(input);

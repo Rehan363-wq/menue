@@ -1,0 +1,7 @@
+name = "hotel-menu-setup"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "hotel-menu-db"
+database_id = "1aedb515-fb61-42d7-87f2-08729af4442a"

@@ -34,6 +34,8 @@ export async function POST(request: Request) {
       media_type: media_url ? (media_type || "image") : null,
       media_url: media_url || null,
       media_thumbnail: null,
+      rating_score: 0,
+      rating_count: 0,
       sort_order: sortOrder,
       created_at: now,
       updated_at: now,
